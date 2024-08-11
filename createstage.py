@@ -9,7 +9,7 @@ import logging
 # snowpark session
 def get_snowpark_session() -> Session:
     connection_parameters = {
-       "ACCOUNT":"....",
+       "ACCOUNT":"....",##Fill this
         "USER": "snowpark_user",
         "PASSWORD": "Test@12$4",
         "ROLE": "SYSADMIN",
@@ -35,38 +35,29 @@ def traverse_directory(directory,file_extension) -> list:
 
     return file_name,partition_dir,local_file_path
 
+def upload_files(file_names, partition_dirs, local_file_paths, stage_location, session):
+    for index, file_element in enumerate(file_names):
+        put_result = session.file.put(
+            local_file_paths[index].replace("\\", "/"),
+            stage_location + "/" + partition_dirs[index].replace("\\", "/"),
+            auto_compress=False, overwrite=True, parallel=10
+        )
+        print(file_element, " => ", put_result[0].status)
 def main():
     directory_path='./temp/sales/'
     stage_location = '@sales_dwh.source.my_internal_stg'
+    session = get_snowpark_session()
     csv_file_name, csv_partition_dir , csv_local_file_path= traverse_directory(directory_path,'.csv')
     parquet_file_name, parquet_partition_dir , parquet_local_file_path= traverse_directory(directory_path,'.parquet')
     json_file_name, json_partition_dir , json_local_file_path= traverse_directory(directory_path,'.json')
-    stage_location = '@sales_dwh.source.my_internal_stg'
 
-    for csv_index,file_element in enumerate(csv_file_name):
-        put_result = ( 
-                    get_snowpark_session().file.put( 
-                        csv_local_file_path[csv_index].replace("\\", "/"),
-                        stage_location+"/"+csv_partition_dir[csv_index].replace("\\", "/"),
-                        auto_compress=False, overwrite=True, parallel=10)
-                    )
-        put_result(file_element," => ",put_result[0].status)
-    for json_index,file_element in enumerate(json_file_name):
-        put_result = ( 
-                    get_snowpark_session().file.put( 
-                        json_local_file_path[json_index].replace("\\", "/"),
-                        stage_location+"/"+json_partition_dir[json_index].replace("\\", "/"),
-                        auto_compress=False, overwrite=True, parallel=10)
-                    )
-        put_result(file_element," => ",put_result[0].status)
-    for parquet_index,file_element in enumerate(parquet_file_name):
-        put_result = ( 
-                    get_snowpark_session().file.put( 
-                        parquet_local_file_path[parquet_index].replace("\\", "/"),
-                        stage_location+"/"+parquet_partition_dir[parquet_index].replace("\\", "/"),
-                        auto_compress=False, overwrite=True, parallel=10)
-                    )
-        put_result(file_element," => ",put_result[0].status)
+    # Upload CSV files
+    upload_files(csv_file_name, csv_partition_dir, csv_local_file_path, stage_location, session)
+    # Upload JSON files
+    upload_files(json_file_name, json_partition_dir, json_local_file_path, stage_location, session)
+
+    # Upload Parquet files
+    upload_files(parquet_file_name, parquet_partition_dir, parquet_local_file_path, stage_location, session)
 
 if __name__ == '__main__':
     main()
