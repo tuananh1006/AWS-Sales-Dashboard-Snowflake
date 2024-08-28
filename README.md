@@ -33,11 +33,11 @@
 ## **Dataset**
 Data get from [tutorial](https://www.youtube.com/watch?v=1jC98XQwBZw)
 I install data from [link]!(https://gitlab.com/toppertips/snowflake-work/-/blob/main/snowpark-example/end2end-sample-data/3-region-sales-data.zip)
-<img src="./image/sampledata.JPG" width="440" height="337">
+<img src="./image/sampledata.JPG" ">
 
 
 Final result after doing follow tutorial :
-<img src="./image/dashboard.JPG" width="440" height="337">
+<img src="./image/dashboard.JPG">
 
 ## I.How-to-Guide
 
