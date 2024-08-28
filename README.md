@@ -2,7 +2,7 @@
 
 ### Flowchart
 
-<img src="./image/system.png" alt="flowchart" width="700"/>
+<img src="./image/system.jpg" alt="flowchart" width="700"/>
 
 ### Repo structure
 ```
@@ -33,11 +33,11 @@
 ## **Dataset**
 Data get from [tutorial](https://www.youtube.com/watch?v=1jC98XQwBZw)
 I install data from [link]!(https://gitlab.com/toppertips/snowflake-work/-/blob/main/snowpark-example/end2end-sample-data/3-region-sales-data.zip)
-<img src="./image/sampledata.png" width="440" height="337">
+<img src="./image/sampledata.jpg" width="440" height="337">
 
 
 Final result after doing follow tutorial :
-<img src="./image/dashboard.png" width="440" height="337">
+<img src="./image/dashboard.jpg" width="440" height="337">
 
 ## I.How-to-Guide
 
