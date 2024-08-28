@@ -63,6 +63,7 @@
 #### 2.1 Creating database and schema
 - Create many schemas which we need: Source, Curated,Consumption,Audit,Common(```2. create database and schema```)
 - After run code ,the result like:
+  
    <img src="./image/step1.JPG">
    
 #### 2.2 Create Internal Stage
