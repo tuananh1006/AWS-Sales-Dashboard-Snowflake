@@ -6,11 +6,15 @@
 
 ### Repo structure
 ```
-├── app: 
-│   ├── data
-│   ├── utils
-│   └── main.py
-├── helm-charts:
+├── python: 
+│   ├── connect.py
+│   ├── createstage.py
+│   ├── curatedtoconsumption.py
+│   ├── loadtosourceschema.py
+│   ├── sourcetocurated_fr.py
+│   ├── sourcetocurated_in.py
+│   └── sourcetocurated_us.py
+├── snowflake_sheet:
 │   ├── jaeger-tracing
 │   ├── model-serving
 │   ├── monitoring
