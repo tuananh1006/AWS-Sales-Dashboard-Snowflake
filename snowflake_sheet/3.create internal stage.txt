@@ -1,0 +1,16 @@
+use schema SALES_DWH.source;
+create or replace stage my_internal_stg;
+
+desc stage my_internal_stg;
+
+grant OWNERSHIP on stage my_internal_stg to role sysadmin;
+show stages;
+
+list @my_internal_stg;
+
+list @my_internal_stg/source=FR/;
+list @my_internal_stg/source=IN/;
+list @my_internal_stg/sales/source=US/;
+
+
+

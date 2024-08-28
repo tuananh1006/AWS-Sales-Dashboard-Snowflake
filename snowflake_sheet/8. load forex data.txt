@@ -1,0 +1,16 @@
+use schema common;
+create or replace transient table exchange_rate(
+    date date, 
+    usd2usd decimal(10,7),
+    usd2eu decimal(10,7),
+    usd2can decimal(10,7),
+    usd2uk decimal(10,7),
+    usd2inr decimal(10,7),
+    usd2jp decimal(10,7)
+);
+ALTER TABLE EXCHANGE_RATE RENAME COLUMN usd2eu to usd2fr;
+--Upload by download and interact with table tab
+--After that
+SELECT * FROM EXCHANGE_RATE
+
+GRANT SELECT ON TABLE EXCHANGE_RATE TO ROLE SYSADMIN;

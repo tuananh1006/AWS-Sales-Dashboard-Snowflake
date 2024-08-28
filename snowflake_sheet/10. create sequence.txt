@@ -1,0 +1,44 @@
+-- order table
+use schema source;
+
+create or replace sequence in_sales_order_seq 
+  start = 1 
+  increment = 1 
+comment='This is sequence for India sales order table';
+
+create or replace sequence us_sales_order_seq 
+  start = 1 
+  increment = 1 
+  comment='This is sequence for USA sales order table';
+
+create or replace sequence fr_sales_order_seq 
+  start = 1 
+  increment = 1 
+  comment='This is sequence for France sales order table';
+
+GRANT USAGE ON SEQUENCE in_sales_order_seq TO ROLE SYSADMIN;
+GRANT USAGE ON SEQUENCE us_sales_order_seq TO ROLE SYSADMIN;
+GRANT USAGE ON SEQUENCE fr_sales_order_seq TO ROLE SYSADMIN;
+
+
+-- Following are for curated schema
+-- -----------------------------------
+use schema curated;
+create or replace sequence in_sales_order_seq 
+  start = 1 
+  increment = 1 
+comment='This is sequence for India sales order table';
+
+create or replace sequence us_sales_order_seq 
+  start = 1 
+  increment = 1 
+  comment='This is sequence for USA sales order table';
+
+create or replace sequence fr_sales_order_seq 
+  start = 1 
+  increment = 1 
+  comment='This is sequence for France sales order table';
+
+GRANT USAGE ON SEQUENCE in_sales_order_seq TO ROLE SYSADMIN;
+GRANT USAGE ON SEQUENCE us_sales_order_seq TO ROLE SYSADMIN;
+GRANT USAGE ON SEQUENCE fr_sales_order_seq TO ROLE SYSADMIN;

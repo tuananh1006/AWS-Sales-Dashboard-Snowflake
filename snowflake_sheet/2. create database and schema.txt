@@ -1,0 +1,15 @@
+create database if not exists sales_dwh;
+
+use database sales_dwh;
+
+create schema if not exists source; --have source stage
+create schema if not exists curated; --data curation and duplication
+create schema if not exists consumption; -- fact & dimension
+create schema if not exists audit; --to capture all audit records
+create schema if not exists common; -- for file formats sequence object etc;
+
+GRANT USAGE ON SCHEMA source to ROLE SYSADMIN;
+GRANT ALL PRIVILEGES  ON SCHEMA curated to ROLE SYSADMIN;
+GRANT USAGE ON SCHEMA consumption to ROLE SYSADMIN;
+GRANT USAGE ON SCHEMA audit to ROLE SYSADMIN;
+GRANT USAGE ON SCHEMA common to ROLE SYSADMIN;
