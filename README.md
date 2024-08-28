@@ -15,23 +15,16 @@
 │   ├── sourcetocurated_in.py
 │   └── sourcetocurated_us.py
 ├── snowflake_sheet:
-│   ├── jaeger-tracing
-│   ├── model-serving
-│   ├── monitoring
-│   └── nginx-ingress
-├── notebook: 
-│   ├── resnet-50.ipynb
-│   └── visualize.ipynb
-├── terraform
-│   ├── main.tf
-│   ├── outputs.tf
-│   ├── provider.tf
-│   ├── README.md
-│   ├── ssh.tf
-│   └── variables.tf
-├── docker-compose.yaml
-├── dockerfile
-└── requirements.txt
+│   ├── 1.create virtual warehouse and user.txt
+│   ├── 2. create database and schema.txt
+│   ├── 3.create internal stage.txt
+│   ├── 4. create file formats.txt
+│   ├── 4. view data.txt
+│   ├── 5. load forex data.txt
+│   ├── 6. create sequence.txt
+│   ├── 6. from stage to source.txt
+│   ├── 7. source to curated.txt
+│   └── 8. curated to consumption.txt
 ```
 
 ## **Dataset**
