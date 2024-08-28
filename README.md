@@ -96,7 +96,7 @@
    <img src="./image/schema.JPG">
    
 - Code create table(```8. curated to consumption```)
-- Using curatedtoconsumption.py to extract transform load from curated to consumption
+- Using ```curatedtoconsumption.py``` to extract transform load from curated to consumption
 
 
 
