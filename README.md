@@ -94,7 +94,9 @@
 #### 3.3 From curated to consumption
 - In consumption, we create table need for requirement.
 - Database Schema, we create like:
+
    <img src="./image/schema.JPG">
+   
 - Code create table(```8. curated to consumption```)
 - Using curatedtoconsumption.py to extract transform load from curated to consumption
 
