@@ -53,9 +53,6 @@
   ```
     session.sql("SQL code")
   ```
-- Result:
-- 
-  <img src="./image/step1.JPG">
 
 ### 2. Initialize
 #### 2.1 Creating database and schema
