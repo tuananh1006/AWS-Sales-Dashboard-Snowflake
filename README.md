@@ -54,6 +54,7 @@
     session.sql("SQL code")
   ```
 - Result:
+- 
   <img src="./image/step1.JPG">
 
 ### 2. Initialize
